@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var block = require('./routes/block');
+const binaryen = require('./routes/binaryen')
+
 var tx = require('./routes/tx');
 var account = require('./routes/account');
 var accounts = require('./routes/accounts');
@@ -53,6 +55,7 @@ app.use('/accounts', accounts);
 app.use('/contract', contract);
 app.use('/signature', signature);
 app.use('/search', search);
+app.use('/binaryen', binaryen)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
