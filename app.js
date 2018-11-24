@@ -13,6 +13,8 @@ var accounts = require('./routes/accounts');
 var contract = require('./routes/contract');
 var signature = require('./routes/signature');
 var search = require('./routes/search');
+var deploy = require('./routes/deploy');
+
 
 var args = require('yargs').argv;
 
@@ -56,6 +58,7 @@ app.use('/block', block);
 app.use('/tx', tx);
 app.use('/account', account);
 app.use('/accounts', accounts);
+app.use('/deploy', deploy);
 // disable verify contract and verify signature...
 // app.use('/contract', contract);
 // app.use('/signature', signature);

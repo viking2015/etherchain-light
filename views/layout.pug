@@ -15,6 +15,8 @@ html(lang="en")
     link(rel='stylesheet', href='/explorer/stylesheets/style.css')
     script(src='/explorer/js/libwabt.js')
     script(src='/explorer/js/compile2wast.js')
+    script(src='/explorer/js/binaryen.min.js')
+    script(src='/explorer/js/utils.js')
   script.
     metamask = window.web3
   body
@@ -46,6 +48,8 @@ html(lang="en")
                   a(href='/explorer/tx/submit') Submit Tx
                 li
                   a(href='/explorer/tx/submit_raw') Submit Raw Tx
+                li
+                  a(href='/explorer/deploy') Deploy Wast Contract
                 // hide verify links
                 //li
                 //  a(href='/explorer/contract/verify') Verify Contract 
