@@ -47,7 +47,7 @@ function submitTransaction() {
     }
 
     // wrap wasm data into a deployer wast contract
-    wast = `(module (import "ethereum" "finish" (func $finish (param i32 i32))) (memory 100) (data (i32.const 0)  "${wast}") (export "memory" (memory 0)) (export "main" (func $main)) (func $main (call $finish (i32.const 0) (i32.const ${wasm.length / 2}))))`;
+    wast = `(module (import "ethereum" "finish" (func $finish (param i32 i32))) (memory (i32.div wasm.length / 65536)) (data (i32.const 0)  "${wast}") (export "memory" (memory 0)) (export "main" (func $main)) (func $main (call $finish (i32.const 0) (i32.const ${wasm.length / 2}))))`;
 
     // compile deployer wast contract to wasm
     try {
